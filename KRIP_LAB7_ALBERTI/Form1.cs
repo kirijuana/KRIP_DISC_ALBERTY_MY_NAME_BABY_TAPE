@@ -73,42 +73,42 @@ namespace KRIP_LAB7_ALBERTI
             {
                 for (int j = 0; j < ALPHA.Length; j++)
                 {
-                    j1 = n + j;
+                
                     if (j1 >= ALPHA.Length)
                     {
                         j1 = j1 % 26;
                     }
                     if (text[i] == ALPHA[j])
                     {
-                        shifr[i] = ALPHA_copy[j1];
-                        n++;
+                        shifr[i] = ALPHA_copy[j];
+                   
                         break;
                     }
                     if (text[i] == alpha[j])
                     {
-                        shifr[i] = alpha_copy[j1];
-                        n++;
+                        shifr[i] = alpha_copy[j];
+                   
                         break;
                     }
                 }
 
                 for (int j = 0; j < ALPH.Length; j++)
                 {
-                    j2 = n + j;
+                    
                     if (j2 >= ALPH.Length)
                     {
                         j2 = j2 % 33;
                     }
                     if (text[i] == ALPH[j])
                     {
-                        shifr[i] = ALPH_copy[j2];
-                        n++;
+                        shifr[i] = ALPH_copy[j];
+                     //   n++;
                         break;
                     }
                     if (text[i] == alph[j])
                     {
-                        shifr[i] = alph_copy[j2];
-                        n++;
+                        shifr[i] = alph_copy[j];
+                     //   n++;
                         break;
                     }
                 }
@@ -168,72 +168,49 @@ namespace KRIP_LAB7_ALBERTI
                 ALPH_copy[j] = ALPH[i];
                 alph_copy[j] = alph[i];
             }
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                for (int j = 0; j < ALPHA.Length; j++)
-                {
-                    if (text[i] == ALPHA[j] || text[i] == alpha[j])
-                    {
-                        length++;
-                        break;
-                    }
-                }
-
-                for (int j = 0; j < ALPH.Length; j++)
-                {
-                    if (text[i] == ALPH[j] || text[i] == alph[j])
-                    {
-                        length++;
-                        break;
-                    }
-                }
-            }
-
-
-            length--;
+     
             for (int i = text.Length - 1; i >= 0; i--)
             {
                 for (int j = 0; j < ALPHA.Length; j++)
                 {
-                    j1 = j - length;
+                   // j1 = j - length;
 
-                    while (j1 < 0)
-                    {
-                        j1 = j1 + 26;
-                    }
+                    //while (j1 < 0)
+                    //{
+                    //    j1 = j1 + 26;
+                    //}
 
                     if (text[i] == ALPHA_copy[j])
                     {
-                        shifr[i] = ALPHA[j1];
-                        length--;
+                        shifr[i] = ALPHA[j];
+                    //    length--;
                     }
 
                     if (text[i] == alpha_copy[j])
                     {
-                        shifr[i] = alpha[j1];
-                        length--;
+                        shifr[i] = alpha[j];
+                     //   length--;
                     }
                 }
                 for (int j = 0; j < ALPH.Length; j++)
                 {
-                    j2 = j - length;
+                //    j2 = j - length;
 
-                    while (j2 < 0)
-                    {
-                        j2 = j2 + 33;
-                    }
+                    //while (j2 < 0)
+                    //{
+                    //    j2 = j2 + 33;
+                    //}
 
                     if (text[i] == ALPH_copy[j])
                     {
-                        shifr[i] = ALPH[j2];
-                        length--;
+                        shifr[i] = ALPH[j];
+                   //     length--;
                     }
 
                     if (text[i] == alph_copy[j])
                     {
-                        shifr[i] = alph[j2];
-                        length--;
+                        shifr[i] = alph[j];
+                      //  length--;
                     }
                 }
             }
